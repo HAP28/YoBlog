@@ -8,8 +8,8 @@ const array = [1]
 const app = express();
 
 //configuration app uses
-app.set('view engine','ejs')
 app.set('views',__dirname + '/views');
+app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("static"))
 
@@ -28,5 +28,6 @@ app.get('/contact',(req,res) => {
 })
 
 app.listen(process.env.PORT,() => {
+    console.log(__dirname + '/views');
     console.log(`app is running on http://localhost:${process.env.PORT}`)
 })
