@@ -4,12 +4,13 @@ const bodyParser = require('body-parser')
 const env = require('dotenv').config()
 const mongoose = require('mongoose')
 const ejs = require('ejs')
+const path = require('path')
 //configure app
 const app = express();
 
 //configuration app uses
 app.set('view engine','ejs')
-app.set('views',__dirname + '/views');
+app.set('views', path.join(__dirname, './views'));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("static"))
 
