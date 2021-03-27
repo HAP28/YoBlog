@@ -8,8 +8,8 @@ const ejs = require('ejs')
 const app = express();
 
 //configuration app uses
-// app.set('views',__dirname + '/views');
 app.set('view engine','ejs')
+app.set('views',__dirname + '/views');
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("static"))
 
