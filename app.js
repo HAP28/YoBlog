@@ -3,12 +3,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const env = require('dotenv').config()
 const mongoose = require('mongoose')
-const array = [1]
+const ejs = require('ejs')
 //configure app
 const app = express();
 
 //configuration app uses
-app.set('views','/views');
+app.set('views',__dirname + '/views');
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("static"))
