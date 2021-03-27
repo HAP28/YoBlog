@@ -9,7 +9,7 @@ const app = express();
 
 //configuration app uses
 app.set('view engine','ejs')
-app.set('views', __dirname + '/views');
+app.set('views',__dirname + '/views');
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("static"))
 
