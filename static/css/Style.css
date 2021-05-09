@@ -505,11 +505,19 @@ footer.footer .move-up span:hover{
 
 /* ---------x------- Footer ----------x---------- */
 
-/*----------------- blog page -----------------*/
+/*----------------- about page -----------------*/
 
+.logo {
+    font-size: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
 
-
-/*--------------- end of blog  page----------------- */
+/*--------------- end of about  page----------------- */
 
 /*              Viewport less then or equal to 1130px            */
 

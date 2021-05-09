@@ -1,0 +1,60 @@
+<%- include('../static/header') %> 
+<body>
+    <%- include('./navbar') %> 
+
+    <section>
+        <div class="container">
+            <!-- <h1 class="m-3 text-center text-primary">Category</h1> -->
+            <div class="row mt-3">
+                <div class="col-md-6 add">
+                    <div class="title text-center text-info">
+                        <h3 class="font-weight-bold">Add Category</h3>
+                    </div>
+                    <div class="add-category mt-5">
+                        <form action="/category" method="post">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Category Name:</label>
+                                <input type="text" name="category" placeholder="Category Name" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="add-button mt-3">
+                                <input type="submit" class="btn btn-primary" value="Add Category">
+                            </div>
+                        </form>
+                        <div class="current-category my-3">
+                            <h5>Current Categories:</h5>
+                            <% for(var i=0;i<categoryList.length; i++){ %> 
+                                <p><%= categoryList[i].category %> </p>
+                            <% } %> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 delete">
+                    <div class="title text-center text-danger">
+                        <h3>Delete Category</h3>
+                    </div>
+                    <div class="delete-category mt-5">
+                        <form action="/category/delete" method="POST">
+                            <label for="category">Select Category:</label>
+                            <select class="form-select" aria-label="Default select example" name="category" id="categoryDropDownList">
+                                <option value = "" selected>Choose Category</option>
+                                <%
+                                    for ( var i = 0; i < categoryList.length; i++ )
+                                    {
+                                        %><option value="<%=categoryList[ i ]._id %>"><%=categoryList[ i ].category %></option><%
+                                    }
+                                %>
+                            </select>
+                            <div class="delete-button mt-3">
+                                <input type="submit" class="btn btn-danger" value="Delete Category">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>    
+</body>
+<script>
+    document.getElementById('catLink').style.fontWeight = 900;
+</script>

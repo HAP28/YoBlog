@@ -1,0 +1,37 @@
+<%- include('../static/header') %> 
+<body>
+<%- include('./navbar') %> 
+    <section class="my-5">
+        <div class="container">
+            <div class="title">
+                <h1 class="text-center my-5">Welcome to the Dashboard!!</h3>
+            </div>
+            <div class="main">
+                <h4 class="text-center mb-5"><b>Here is your profile</b></h4>
+                <div class="row text-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="category">
+                            <label for="Category" style="font-weight: 900;">No of Category:</label> <p id="noOfCategory" style="display: inline-block;"><%= noOfCategory %></p>
+                        </div>
+                        <div class="blogs">
+                            <label for="Category" style="font-weight: 900;">No of Blogs:</label> <p id="noOfCategory" style="display: inline-block;"><%= noOfBlog %></p>
+                        </div>    
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <img src="https://image.shutterstock.com/image-photo/blog-information-website-concept-workplace-260nw-1101494699.jpg" alt="image">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    // $('#homeLink').css('font-weight',900);
+    document.getElementById('homeLink').style.fontWeight = 900;
+    if(!localStorage.getItem('login')){
+        alert('Please Login');
+        window.location = '/admin';
+    }
+</script>
+<%- include('../static/footer') %> 

@@ -4,10 +4,102 @@
     <!-- navbar -->
     <%- include('static/navbar') %> 
 
+    <section style="background-color: #A8A8A8;">
+        <div class="container" style="display: table; height: 300px; overflow: hidden;">
+            <div class="jumbotron text-center" style="display: table-cell; vertical-align: middle;">
+                <h1>YoBlog</h1>
+                <p class="text-light" style="font-weight: bolder;">We create future</p>
+                <form class="form-inline">
+                  <div class="input-group">
+                    <input type="email" class="form-control" style="border-radius: 2rem" size="50" placeholder="Email Address" required>
+                    <div class="input-group-btn">
+                      <button type="button" class="btn btn-danger mx-3">Subscribe</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <section>
+        <div class="container py-5">
+            <div class="row">
+              <div class="col-sm-8">
+                <h2>About Company</h2>
+                <h4>We serve happiness</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem velit dolore expedita atque, beatae pariatur accusamus omnis assumenda voluptas ipsa repellendus neque quam odit consequatur voluptates id suscipit dicta quia corrupti adipisci. Suscipit voluptatibus impedit nam eos repudiandae consequuntur voluptate necessitatibus nesciunt officiis, nostrum iste ex doloribus, quidem, tempora alias!</p>
+                <button class="btn btn-primary btn-lg">Get in Touch</button>
+              </div>
+              <div class="col-sm-4">
+                <span class="glyphicon glyphicon-signal logo" style="color: #104f55;"><i class="fas fa-signal"></i></span>
+              </div>
+            </div>
+        </div>
+          
+        <div class="container bg-grey">
+            <div class="row">
+              <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo" style="color: #104f55;"><i class="fas fa-globe-europe"></i></span>
+              </div>
+              <div class="col-sm-8">
+                <h2>Our Values</h2>
+                <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>
+                <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cupiditate eos quis porro non placeat deserunt quae animi et, earum veritatis recusandae repellendus tempore fugiat ipsum excepturi dicta laudantium! Repellendus amet in aperiam ipsam porro, sed aspernatur dicta recusandae, reiciendis, exercitationem pariatur dolores perspiciatis corporis est mollitia voluptas quas! Pariatur, distinctio! Corrupti, aperiam. Nisi necessitatibus asperiores maxime pariatur dolor amet!</p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid text-center py-5">
+            <h2 class="py-3">SERVICES</h2>
+            <h4>What we offer</h4>
+            <br>
+            <div class="row">
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-off"><i class="fas fa-power-off"></i></span>
+                <h4>POWER</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-heart"><i class="fas fa-heart"></i></span>
+                <h4>LOVE</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-lock"><i class="fas fa-lock"></i></span>
+                <h4>JOB DONE</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+              </div>
+              <br><br>
+            <div class="row">
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-leaf"><i class="fas fa-lock"></i></span>
+                <h4>GREEN</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-certificate"><i class="fas fa-lock"></i></span>
+                <h4>CERTIFIED</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+              <div class="col-sm-4 p-3">
+                <span class="glyphicon glyphicon-wrench"><i class="fas fa-lock"></i></span>
+                <h4>HARD WORK</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+              </div>
+            </div>
+          </div>
+    </section>
     <%- include('static/footer') %> 
 
 <script>
     document.querySelector('#aboutLink a').style.color = '#104f55';
     document.querySelector('#aboutLink a').style.fontWeight = '900';
+    $("#aboutLink").hover(function(){
+        $("#aboutLink a").css("color", "white");
+    },function(){
+        $("#aboutLink a").css("color", "#104f55");
+    });
 </script>
