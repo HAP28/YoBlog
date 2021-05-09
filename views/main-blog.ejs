@@ -1,2 +1,23 @@
 <%- include('static/header') %>
 <%- include('static/navbar') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="heading">
+                <h1 class="my-3"><%= blogs.title %> </h1>
+            </div>
+            <img src="<%= blogs.img %>"  alt="image" height="500px" width="700px">
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="description">
+            <p><%= blogs.description %> </p>
+        </div>
+    </div>
+</div>
+
+<%- include('static/footer') %>

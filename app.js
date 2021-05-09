@@ -6,17 +6,7 @@ const env = require('dotenv').config()
 const mongoose = require('mongoose')
 const ejs = require('ejs')
 const path = require('path')
-const multer = require('multer');
-const router = express.Router();
 
-const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, './uploads/');
-    },filename: function(req, file, cb) {
-        cb(null, file.originalname);
-    }
-});
-const upload = multer({storage: storage});
 //configure app
 const app = express();
 
@@ -90,7 +80,16 @@ app.get('/dashboard', (req,res) => {
     });
 })
 app.get('/main-blog', (req,res) => {
-    res.render('main-blog', {title: req.query.x})
+    let id = req.query.x;
+    Blog.findOne({_id: id},(e,post) => {
+        if(e){
+            res.send(e);
+        } else{
+            res.render('main-blog',{title: post.title, blogs: post});
+            console.log('Fetched every docs');
+        }
+    });
+    // res.render('main-blog', {title: req.query.x})
 })
 app.get('/compose', (req,res) => {
     Category.find((e,categories) => {
@@ -103,10 +102,6 @@ app.get('/compose', (req,res) => {
     });
     
 })
-// app.post('/blog/store',(req,res) => {
-//     console.log(req.body);
-//     res.redirect('/')
-// })
 app.listen(process.env.PORT,() => {
     console.log(`app is running on http://localhost:${process.env.PORT}`)
 })
