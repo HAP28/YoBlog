@@ -75,11 +75,11 @@ router.route('/')
 
 router.route('/:postTitle')
 .get((req,res) => {
-    Blog.findOne({title: req.params.postTitle},(e,post) => {
-        if(post){
-            res.send(post);
+    Blog.deleteOne({title: req.params.postTitle},(e) => {
+        if(e){
+            res.send(e);
         } else{
-            res.send('No article found :(');
+            res.redirect('/blogs')
         }
     });
 })

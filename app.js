@@ -85,7 +85,7 @@ app.get('/main-blog', (req,res) => {
         if(e){
             res.send(e);
         } else{
-            res.render('main-blog',{title: post.title, blogs: post});
+            res.render('admin/main-blog',{title: post.title, blogs: post});
             console.log('Fetched every docs');
         }
     });
